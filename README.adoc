@@ -1,0 +1,11 @@
+## lua-auparse
+
+```
+$ gcc -fPIC -I/usr/include/linux/audit.h -I/usr/include/libaudit.h -I/usr/include/auparse-defs.h -I/usr/include/auparse.h -I/usr/include/lua -c auparse_wrap.c -o auparse_wrap.o
+
+$ gcc -g -shared -l lua-5.1 -l auparse -I/usr/include/lua -L/usr/lib64 auparse_wrap.o -o auparse.so
+
+$ lua
+Lua 5.1.5  Copyright (C) 1994-2012 Lua.org, PUC-Rio
+> require "auparse"
+```
